@@ -23,7 +23,8 @@ public class SecurityConfig {
 	@Autowired
 	private Environment env;
 
-    @Bean
+    @SuppressWarnings("deprecation")
+	@Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
             http.headers(withDefaults());
